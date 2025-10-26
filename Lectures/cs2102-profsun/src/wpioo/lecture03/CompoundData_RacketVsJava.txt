@@ -1,0 +1,51 @@
+Racket
+------
+
+(define-struct some-compound-data (field-1 field-2 field3))
+;; a SomeCompoundData is a (make-some-compound-data Type1 Type2 Type3)
+;; ....
+(define MY-VALUE (make-some-compound-data value-1 value-2 value-3))
+
+;; SomeCompoundData -> ReturnType
+(define (some-function a-scd)
+  (... (some-compound-data-field1 a-scd)
+       (some-compound-data-field2 a-scd)
+       (some-compound-data-field3 a-scd)))
+(check-expect (some-function MY-VALUE) ...)
+
+Java:
+----
+
+In SomeCompoundData.java:
+
+/** ... */
+public class SomeCompoundData {
+  /** ... */
+  public Type1 field1;
+  /** ... */
+  public Type2 field2;
+  /** ... */
+  public Type3 field3;
+
+  /** ... */
+  public SomeCompoundData(Type1 param1, Type2 param2, Type3 param3) {
+     this.field1 = param1;
+     this.field2 = param2;
+     this.field3 = param3;
+  }
+
+  public ReturnType someFunction(){
+    return ... this.field1 this.field2 this.field3;
+  }
+
+}
+
+In Examples.java:
+
+public class Examples{
+  @Test
+  public void testSomeDataSomeFunction1(){
+    SomeCompoundData scd = new SomeCompoundData(value1, value2, value3);
+    assertEquals(..., scd.someFunction());
+  }
+}
