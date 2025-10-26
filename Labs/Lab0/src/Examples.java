@@ -1,6 +1,12 @@
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
+/**
+ * These are my unit tests for both BoatTour and HouseCalculator
+ *
+ * @author Benjamin Samara
+ * @version 1.0
+ */
 
 public class Examples {
     @Test
@@ -42,5 +48,11 @@ public class Examples {
     public void testHC_total_costs_zero(){
         HouseCalculator hc = new HouseCalculator();
         assertEquals(2500.0,hc.totalCost(0.0,0.0), 0.01);
+    }
+
+    @Test
+    public void testHC_total_costs_one(){
+        HouseCalculator hc = new HouseCalculator();
+        assertEquals(782500.0,hc.totalCost(300000,100000), 0.01);
     }
 }
