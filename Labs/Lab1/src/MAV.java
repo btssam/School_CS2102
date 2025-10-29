@@ -28,7 +28,12 @@ public class MAV {
      * @return
      */
     double percentUntilRecharge(){
-        return 0;
+        //look at meterstoDest, battery.amountLeft and propellers.speed and propellers.currentDrawEach
+        double metersTravelable;
+        metersTravelable = propellers.speed * battery.amountLeft/
+                propellers.currentDrawEach /propellers.count;
+        //metersTravelable coule be a helper method
+        return Math.min(metersTravelable/metersToDest, 1.0);
     }
 
     /**
@@ -37,7 +42,12 @@ public class MAV {
      * @return
      */
     boolean doesReachDest(){
-        return false;
+        if (percentUntilRecharge() >= 1.0){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     /**
@@ -47,7 +57,7 @@ public class MAV {
      * "thisVehiclesName&paramVehiclesName"
      * @return
      */
-    String whichGoesFurther(){
+    String whichGoesFurther(MAV otherMAV){
         return "";
     }
 
@@ -61,7 +71,7 @@ public class MAV {
      * method should not leave the vehicle with a negative meters-to-destination nor a
      * negative amount of battery left, and instead set those fields to 0.
      */
-    void flyFor(){
+    void flyFor(double seconds){
 
     }
 
