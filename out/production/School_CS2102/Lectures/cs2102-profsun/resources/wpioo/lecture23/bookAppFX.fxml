@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="565.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wpioo.lecture23.controllers.gui.JavaFXGUIBookController">
+   <top>
+      <Pane prefHeight="39.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="message" prefHeight="35.0" prefWidth="600.0" text="Enter Book Information Below">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </top>
+   <bottom>
+      <ScrollPane prefHeight="145.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="142.0" prefWidth="585.0">
+               <children>
+                  <TextArea fx:id="frequencyDisplay" editable="false" prefHeight="144.0" prefWidth="586.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </bottom>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane prefHeight="41.0" prefWidth="600.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" prefHeight="72.0" prefWidth="303.0" text="Book Name:">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="bookName" prefHeight="118.0" prefWidth="327.0" GridPane.columnIndex="1" />
+               </children>
+            </GridPane>
+            <ScrollPane layoutX="-1.0" layoutY="41.0" prefHeight="299.0" prefWidth="600.0">
+               <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="283.0" prefWidth="591.0">
+                     <children>
+                        <TextArea fx:id="bookContent" prefHeight="281.0" prefWidth="586.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+            <ToolBar layoutX="142.0" layoutY="340.0" prefHeight="40.0" prefWidth="318.0">
+              <items>
+                <Button fx:id="addBook" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#addBook" text="Add Book">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="removeButton" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#removeBook" text="Remove Book">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="printButton" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#printBook" text="Print Book">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+              </items>
+            </ToolBar>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>

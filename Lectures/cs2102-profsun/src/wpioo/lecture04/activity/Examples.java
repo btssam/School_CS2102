@@ -16,11 +16,11 @@ public class Examples {
     // /**
     // * This test case creates a bank account with zero balance
     // */
-    // @Test
-    // public void testBankAccount1ArgConstructor() {
-    // BankAccount b = new BankAccount("Gompei the Goat");
-    // assertEquals(0.0, b.balance(), 0.01);
-    // }
+     @Test
+     public void testBankAccount1ArgConstructor() {
+     BankAccount b = new BankAccount("Gompei the Goat");
+     assertEquals(0.0, b.balance(), 0.01);
+     }
     //
     // /**
     // * This test case creates a bank account with some initial balance

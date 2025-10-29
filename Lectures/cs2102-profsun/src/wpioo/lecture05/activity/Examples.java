@@ -18,6 +18,10 @@ public class Examples {
      */
     @Test
     public void testHeatingSystemSecondsUntil60DegreesC() {
+
+
+
+
         // propane: 11900 C L / kg
         // Pick nice numbers to make the math easy for a simple test
         Furnace furnace = new Furnace(10.0);
