@@ -1,5 +1,6 @@
 package wpioo.lecture07.activity;
 
+import java.util.LinkedList;
 import java.util.List;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
@@ -28,7 +29,7 @@ public class Examples {
      */
     @Test
     public void testProcessStringsTotalCharactersEmpty() {
-        // assertEquals(???, psEmpty.totalCharacters());
+         assertEquals(0, psEmpty.totalCharacters());
     }
 
     /**
@@ -36,7 +37,7 @@ public class Examples {
      */
     @Test
     public void testProcessStringsTotalCharactersNonEmpty() {
-        // assertEquals(???, psNonEmpty.totalCharacters());
+         assertEquals(23, psNonEmpty.totalCharacters());
     }
 
     /**
@@ -44,7 +45,7 @@ public class Examples {
      */
     @Test
     public void testProcessStringsTotalCharactersSameLength() {
-        // assertEquals(???, psAllSameLength.totalCharacters());
+         assertEquals(15, psAllSameLength.totalCharacters());
     }
 
     /**
@@ -52,7 +53,7 @@ public class Examples {
      */
     @Test
     public void testProcessStringsLongestStringEmpty() {
-        // assertEquals(???, psEmpty.longestString());
+         assertEquals("", psEmpty.longestString());
     }
 
     /**
@@ -60,7 +61,7 @@ public class Examples {
      */
     @Test
     public void testProcessStringsLongestStringNonEmpty() {
-        // assertEquals(???, psNonEmpty.longestString());
+         assertEquals("student", psNonEmpty.longestString());
     }
 
     /**
@@ -68,7 +69,7 @@ public class Examples {
      */
     @Test
     public void testProcessStringsLongestStringSameLength() {
-        // assertEquals(???, psAllSameLength.longestString());
+         assertEquals("maybe", psAllSameLength.longestString());
     }
 
     /**
@@ -76,7 +77,7 @@ public class Examples {
      */
     @Test
     public void testProcessStringsStringWithLength5Empty() {
-        // assertEquals(???, psEmpty.stringsWithLength(5));
+         assertEquals(new LinkedList<>(), psEmpty.stringsWithLength(5));
     }
 
     /**
@@ -84,7 +85,7 @@ public class Examples {
      */
     @Test
     public void testProcessStringsStringWithLength5NonEmpty() {
-        // assertEquals(???, psNonEmpty.stringsWithLength(5));
+        assertEquals(List.of("maybe","lunch", "later"), psNonEmpty.stringsWithLength(5));
     }
 
     /**
@@ -94,4 +95,11 @@ public class Examples {
     public void testProcessStringsStringWithLength5SameLength() {
         // assertEquals(???, psAllSameLength.stringsWithLength(5));
     }
+
+    @Test
+    public void testProcessStringsEqual(){
+        ProcessStrings t = new ProcessStrings(List.of("maybe", "lunch", "later"));
+        assertEquals(psAllSameLength, t);
+    }
+
 }

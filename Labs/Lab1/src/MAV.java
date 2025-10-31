@@ -57,8 +57,18 @@ public class MAV {
      * "thisVehiclesName&paramVehiclesName"
      * @return
      */
-    String whichGoesFurther(MAV otherMAV){
-        return "";
+    String whichGoesFurther(MAV otherMAV){double metersTravelable;
+        double thisMetersTravelable = propellers.speed * battery.capacity/
+                propellers.currentDrawEach /propellers.count;
+        double otherMetersTravelable = otherMAV.propellers.speed * otherMAV.battery.capacity/
+                otherMAV.propellers.currentDrawEach /otherMAV.propellers.count;
+        //could use a helper method for these
+        if (thisMetersTravelable > otherMetersTravelable){
+            return name;
+        } else if (thisMetersTravelable < otherMetersTravelable) {
+            return otherMAV.name;
+        }
+        return name + '&' + otherMAV.name;
     }
 
     /**
@@ -72,6 +82,11 @@ public class MAV {
      * negative amount of battery left, and instead set those fields to 0.
      */
     void flyFor(double seconds){
+        double metersTraveled = seconds * propellers.speed;
+        metersToDest = Math.max(metersToDest - metersTraveled, 0);
+
+        double batteryUsed = seconds * propellers.speed * propellers.currentDrawEach * propellers.count;
+        battery.amountLeft = Math.max(battery.amountLeft - batteryUsed, 0);
 
     }
 

@@ -62,6 +62,25 @@ public class WaterTank {
         return targetTemp - this.temperature;
     }
 
+    @Override
+    public boolean equals(Object o){
+        //is WaterTank?
+        if (o instanceof WaterTank){
+            //convert o to WaterTank
+            WaterTank other = (WaterTank) o;
+            return this.temperature == other.temperature &&
+                    this.capacity == other.capacity &&
+                    this.percentFull == other.percentFull;
+        }
+        else{
+            return false;
+        }
+    }
+
+    @Override
+    public String toString(){
+        return String.format("WaterTank: %f, %f, %f%%", this.temperature, this.capacity, this.percentFull);
+    }
     /**
      * Updates the current water tank temperature by some amount
      *
@@ -72,3 +91,4 @@ public class WaterTank {
         this.temperature += deltaCelsius;
     }
 }
+

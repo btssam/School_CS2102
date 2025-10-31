@@ -98,7 +98,6 @@ public class HeatingSystem {
         }
 
         // (C*L / kg) * kg -> (C * L)
-        double
 
         // (C*L) / L --> C
 
